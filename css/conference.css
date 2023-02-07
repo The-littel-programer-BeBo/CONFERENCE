@@ -18,11 +18,20 @@ html {
 html,
 body {
   width: 100vw;
-  height: 100vh;
   background-color: var(--second-background);
-  overflow: unset;
+  overflow-x: hidden;
   font-size: min(1vw, 1vh);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+html > *,
+body > * {
+  overflow-x: hidden;
+}
+@media (max-width: 720px) {
+  html,
+body {
+    font-size: min(1.5vw, 1.5vh);
+  }
 }
 
 ul {
@@ -79,7 +88,7 @@ ul {
   font-weight: bold;
 }
 #loadingPage .half {
-  width: 50%;
+  width: 51%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -127,7 +136,7 @@ nav .logo.load img {
   transform: translateX(-50%);
 }
 nav .logo img {
-  height: 7vh;
+  height: 100%;
   transition: 1.2s ease-out all;
   transform: translateX(0%);
 }
@@ -288,7 +297,7 @@ nav #toggler.toggler .bottom {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1;
 }
 .home .logo {
@@ -308,6 +317,11 @@ nav #toggler.toggler .bottom {
   text-align: center;
   z-index: 2;
   font-weight: 700;
+}
+@media (max-width: 720px) {
+  .home .content {
+    width: 90%;
+  }
 }
 .home .content h1 {
   color: var(--main-color);
@@ -331,7 +345,7 @@ nav #toggler.toggler .bottom {
   cursor: pointer;
   transition: 0.1s ease-out all;
 }
-@media (max-width: 660px) {
+@media (max-width: 722px) {
   .home .content button {
     width: 80%;
     min-height: 9vh;
@@ -542,6 +556,20 @@ nav #toggler.toggler .bottom {
   font-size: 4.8rem;
   color: var(--main-color);
 }
+@media (max-width: 720px) {
+  .persons .container .person .info .title {
+    font-size: 2.2rem;
+  }
+  .persons .container .person .info .name {
+    font-size: 1.8rem;
+  }
+  .persons .container .person .info .dsc {
+    font-size: 1.8rem;
+  }
+  .persons .container .person .info svg {
+    font-size: 3.2rem;
+  }
+}
 .persons .container .person:nth-child(odd) {
   flex-direction: row-reverse;
 }
@@ -601,6 +629,20 @@ nav #toggler.toggler .bottom {
   transition-delay: calc(4s/2);
 }
 
+#stop {
+  position: absolute;
+  padding: 1vh 1.5vw;
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateY(-100%);
+}
+
 .sponsors {
   min-height: 30vh;
   padding: 2vh 0;
@@ -619,13 +661,24 @@ nav #toggler.toggler .bottom {
   letter-spacing: 0.7rem;
   text-transform: uppercase;
 }
+@media (max-width: 722px) {
+  .sponsors p {
+    font-size: 3rem;
+  }
+}
 .sponsors #slide {
   min-height: 25vw;
   min-width: 100%;
   direction: rtl;
   display: flex;
+  position: relative;
+  overflow-x: hidden;
   align-items: center;
   gap: 4vh;
+}
+.sponsors #slide.animate img {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 @-webkit-keyframes move {
   to {

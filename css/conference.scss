@@ -18,11 +18,17 @@ html {
 html,
 body {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   background-color: var(--second-background);
-  overflow:unset;
+  overflow-x:hidden;
   font-size: min(1vw,1vh);
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  &>*{
+    overflow-x: hidden;
+  }
+  @media (max-width:720px) {
+    font-size: min(1.5vw,1.5vh);
+  }
 }
 
 ul {
@@ -82,7 +88,7 @@ ul {
   font-size: 15rem;
   font-weight: bold;
   .half{
-    width: 50%;
+    width: 51%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -131,7 +137,7 @@ nav{
       }
     }
     img{
-      height: calc($nav-height - 3vh);
+      height: 100%;
       transition: 1.2s ease-out all;
       transform: translateX(0%);
     }
@@ -324,6 +330,9 @@ nav{
     text-align: center;
     z-index: 2;
     font-weight: 700;
+    @media (max-width:720px) {
+      width: 90%;
+    }
     h1{
       color: var(--main-color);
       font-size: 5rem;
@@ -345,7 +354,7 @@ nav{
       border-radius: 5px;
       cursor: pointer;
       transition: .1s ease-out all;
-      @media (max-width:660px) {
+      @media (max-width:722px){
         width: 80%;
         min-height: 9vh;
         padding: 1vh 1vw;
@@ -555,6 +564,20 @@ nav{
           font-size: 4.8rem;
           color: var(--main-color);
         }
+        @media (max-width:720px){
+          .title{
+            font-size: 2.2rem;
+          }
+          .name{
+            font-size: 1.8rem;
+          }
+          .dsc{
+            font-size: 1.8rem;
+          }
+          svg{
+            font-size: 3.2rem;
+          }
+        }
       }
       &:nth-child(odd){
         flex-direction: row-reverse;
@@ -601,6 +624,19 @@ nav{
 }
 // end persons
 // start sponsors
+#stop{
+  position: absolute;
+  padding: 1vh 1.5vw;
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateY(-100%);
+}
 .sponsors{
   min-height: 30vh;
   padding: 2vh 0;
@@ -617,14 +653,24 @@ nav{
     font-weight:700;
     letter-spacing: .7rem;
     text-transform: uppercase;
+    @media (max-width:722px) {
+      font-size: 3rem;
+    }
   }
   #slide{
     min-height: 25vw;
     min-width: 100%;
     direction: rtl;
     display: flex;
+    position: relative;
+    overflow-x: hidden;
     align-items: center;
     gap: 4vh;
+    &.animate{
+      img{      
+        animation-play-state: paused;
+      }
+    }
     @keyframes move {
       to{transform: translateX(200%);}
     }

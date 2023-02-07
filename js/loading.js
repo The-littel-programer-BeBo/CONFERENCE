@@ -13,7 +13,7 @@ function typeMsg(massage, ele){
       clearInterval(type)
       enter.next()
     }
-  }, 200)
+  },250)
 }
 
 typeMsg('icnh',left)
@@ -30,6 +30,7 @@ function finshed(){
   setTimeout(()=>enableScroll(),1000) 
 }
 
+// disable scroll before loading
 function disableScroll() {
   // Get the current page scroll position
   scrollTop =
@@ -44,6 +45,7 @@ function disableScroll() {
   };
 }
 disableScroll()
+// enable scroll after loading
 function enableScroll() {
   window.onscroll = function() {};
 }

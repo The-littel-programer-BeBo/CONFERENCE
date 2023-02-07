@@ -122,21 +122,5 @@ let  countDownTimer = setInterval(()=>{
   }
 },1000)
 
-// slide image
-// const sponsors = [
-//   '<img src="imgs/chem-tech.png" alt="chem-tech">',
-//   '<img src="imgs/conference.png" alt="science-logo">',
-//   '<img src="imgs/science-logo.png" alt="science-logo">'
-// ]
-// let i = 0;
-// let move = 0;
-// setInterval(()=>{
-//   slide.insertAdjacentHTML('beforeend',sponsors[i])
-//   i == sponsors.length -1 ? i = 0 : i += 1;
-//   setTimeout(()=>{
-//     slide.children[move].style.cssText = `right:200vw;`
-//     move+=1
-//   },500)
-//   // slide.style.transform = `translateX(${move*5}%)`
-//   // slide.style.width = `${move*20}%`
-// },1000)
+// stop slide animation
+document.getElementById('stop').addEventListener('click',()=>slide.classList.toggle('animate'))
