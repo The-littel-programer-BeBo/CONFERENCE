@@ -668,7 +668,7 @@ nav #toggler.toggler .bottom {
   }
 }
 .sponsors #slide {
-  min-height: 25vw;
+  min-height: 20vw;
   min-width: 100%;
   direction: rtl;
   display: flex;
