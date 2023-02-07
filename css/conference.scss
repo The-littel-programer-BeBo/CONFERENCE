@@ -10,7 +10,6 @@ $nav-height:10vh;
   padding: 0px;
   margin: 0px;
   transition:transform .6s ease-out,opacity 1.3s ease-out;
-  // transition-property: transform,opacity;
 }
 html {
   scroll-behavior: smooth;
@@ -118,6 +117,7 @@ nav{
   transition: .5s all;
   border-bottom: .5vh solid var(--main-color);
   background-color: #fff;
+  overflow: unset;
   .logo{
     height: calc($nav-height - 3vh);
     // padding: 0vh 0vw;
