@@ -635,7 +635,7 @@ nav{
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  transform: translateY(-100%);
+  transform: translateY(-99%);
 }
 .sponsors{
   min-height: 30vh;
@@ -658,7 +658,7 @@ nav{
     }
   }
   #slide{
-    min-height: 20vw;
+    min-height: min(24vh,24vw);
     min-width: 100%;
     direction: rtl;
     display: flex;
@@ -675,7 +675,7 @@ nav{
       to{transform: translateX(200%);}
     }
     img{
-      width: 16vw;
+      width: min(18vh,18vw);
       position: absolute;
       right:-50vw;
       animation: move 7s linear infinite;
@@ -683,7 +683,7 @@ nav{
         to{right: 150vw;}
       }
       &[alt='chem-tech']{
-        width: 20vw;
+        width: min(20vh,20vw);
       }
       @for $i from 1 through 8 {
         &:nth-child(#{$i}){

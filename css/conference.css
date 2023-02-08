@@ -641,7 +641,7 @@ nav #toggler.toggler .bottom {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  transform: translateY(-100%);
+  transform: translateY(-99%);
 }
 
 .sponsors {
@@ -668,7 +668,7 @@ nav #toggler.toggler .bottom {
   }
 }
 .sponsors #slide {
-  min-height: 20vw;
+  min-height: min(24vh, 24vw);
   min-width: 100%;
   direction: rtl;
   display: flex;
@@ -692,7 +692,7 @@ nav #toggler.toggler .bottom {
   }
 }
 .sponsors #slide img {
-  width: 16vw;
+  width: min(18vh, 18vw);
   position: absolute;
   right: -50vw;
   -webkit-animation: move 7s linear infinite;
@@ -704,7 +704,7 @@ nav #toggler.toggler .bottom {
   }
 }
 .sponsors #slide img[alt=chem-tech] {
-  width: 20vw;
+  width: min(20vh, 20vw);
 }
 .sponsors #slide img:nth-child(1) {
   -webkit-animation-delay: calc(1s);
