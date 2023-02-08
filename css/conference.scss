@@ -663,7 +663,7 @@ nav{
     direction: rtl;
     display: flex;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     align-items: center;
     gap: 4vh;
     &.animate{
